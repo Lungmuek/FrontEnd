@@ -8,14 +8,6 @@ import Nav from "react-bootstrap/Nav";
 import AppHeader from "./components/Appheader";
 
 function Navbar_com() {
-  const [navbar, setnavbar] = useState(false);
-
-  const changeBackground = () => {
-    console.login(window.scrollY);
-  };
-
-  window.addEventListener("scroll", changeBackground);
-
   return (
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
