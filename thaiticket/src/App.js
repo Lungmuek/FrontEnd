@@ -9,7 +9,10 @@ function App() {
       <Navbar_com />
       <div className="app-grid">
         <div>
-          <Poster_item />
+          <Poster_item
+            title="2024 NA IN WOO Fan Meeting in Bangkok ''Touch my heart''"
+            thumnailurl="/images/2024-na-in-woo.png"
+          />
         </div>
         <div> pic2 </div>
         <div> pic3 </div>

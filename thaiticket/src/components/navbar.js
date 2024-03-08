@@ -12,7 +12,7 @@ import Modal from "../Login/Modal";
 function Navbar_com() {
   return (
     <div>
-      <Navbar expand="lg" className="Nav">
+      <Navbar expand="lg" className="Nav_scoll">
         <Container fluid>
           <Navbar.Brand href="#">
             <AppHeader />

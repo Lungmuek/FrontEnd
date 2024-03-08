@@ -1,3 +1,6 @@
-.Nav{
+.Nav_scoll {
+    position: -webkit-sticky; /* Safari */
     position: sticky;
-}
+    top: 0;
+    z-index: 1000; /* ให้ Navbar อยู่หน้าสุดของเว็บ */
+  }
