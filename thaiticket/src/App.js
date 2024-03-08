@@ -9,7 +9,7 @@ function App() {
   const [searchText, setseachText] = useState("");
 
   const fliterTexts = events.filter((event_now) => {
-    return event_now.title.includes(searchText);
+    return event_now.title.toLowerCase().includes(searchText.toLowerCase());
   });
 
   const eventElements = fliterTexts.map((eventt, index) => {

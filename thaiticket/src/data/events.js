@@ -28,6 +28,10 @@ const events = [
     title: "Vir Das : Mind Fool Tour in Bangkok",
     thumnailurl: "/images/vir-das-mind-fool-tour-in-bangkok.png",
   },
+  {
+    title: "ONE Fight Night 21",
+    thumnailurl: "/images/one-fight-night-21.png",
+  },
 ];
 
 export default events;
