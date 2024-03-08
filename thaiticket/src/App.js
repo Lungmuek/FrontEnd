@@ -7,6 +7,7 @@ import events from "./data/events";
 
 function App() {
   const [searchText, setseachText] = useState("");
+  const [event, setEvent] = useState([])
 
   const fliterTexts = events.filter((event_now) => {
     return event_now.title.toLowerCase().includes(searchText.toLowerCase());
