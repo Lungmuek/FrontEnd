@@ -1,59 +1,195 @@
-import React, { Component } from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import login from "./Login/login";
+import Navbar_com from "./navbar";
 
-import { Container, Form, Button } from "react-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import AppHeader from "./components/Appheader";
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar expand="lg" className="bg-body-tertiary">
-          <Container fluid>
-            <Navbar.Brand href="#">
-              <AppHeader />
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="me-auto my-2 my-lg-0"
-                style={{ maxHeight: "100px" }}
-                navbarScroll
-              >
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Link</Nav.Link>
-                <NavDropdown title="Link" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <Nav.Link href="#" disabled>
-                  Link
-                </Nav.Link>
-              </Nav>
-              <Form className="d-flex">
-                <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+function App() {
+  return (
+    <div className="app">
+      <Navbar_com />
+      <div className="app-event">
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
+        <div> pic1 </div>
+        <div> pic2 </div>
+        <div> pic3 </div>
+        <div> pic4 </div>
+        <div> pic5 </div>
+        <div> pic6 </div>
+        <div> pic7 </div>
+        <div> pic8 </div>
+        <div> pic9 </div>
+        <div> pic10 </div>
+        <div> pic11 </div>
+        <div> pic12 </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
 export default App;
