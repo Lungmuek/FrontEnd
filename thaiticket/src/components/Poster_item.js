@@ -7,7 +7,7 @@ function Poster_item(props) {
   return (
     <div className="Poster_item">
       <img src={thumnailurl} />
-      <h7>{title}</h7>
+      <h8>{title}</h8>
       <Button variant="danger">ซื้อบัตร</Button>
     </div>
   );

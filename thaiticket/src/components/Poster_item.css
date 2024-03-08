@@ -1,11 +1,20 @@
+.Poster_item{
+    display: grid;
+    grid-template-rows: 1fr 0.3fr;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .Poster_item img{
-    display: block;
+     
     width: 100%;
     margin-bottom: 10px;
 }
 
 .Poster_item button{
-    width: 200px; /* กำหนดความกว้างของปุ่ม */
+    width: 100%; /* กำหนดความกว้างของปุ่ม */
     margin-bottom: 10px; /* กำหนดระยะห่างของปุ่มล่าสุด */
     padding: 10px;
+    
 }
+
