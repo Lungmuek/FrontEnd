@@ -9,7 +9,8 @@ import AppHeader from "./Appheader";
 import "./navbar.css";
 import Modal from "../Login/Modal";
 
-function Navbar_com() {
+function Navbar_com(props) {
+  const { searchText, setseachText } = props;
   return (
     <div>
       <Navbar expand="lg" className="Nav_scoll">
@@ -28,10 +29,14 @@ function Navbar_com() {
               <Nav.Link href="#" disabled></Nav.Link>
               <Form className="d-flex">
                 <Form.Control
-                  type="search"
+                  type="text"
                   placeholder="Search"
                   className="me-2"
                   aria-label="Search"
+                  value={searchText}
+                  onChange={(event) => {
+                    setseachText(event.target.value);
+                  }}
                 />
                 <Button variant="outline-success">Search</Button>
               </Form>

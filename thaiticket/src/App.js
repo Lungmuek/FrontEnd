@@ -1,60 +1,29 @@
+import { useState } from "react";
 import "./App.css";
 
 import Navbar_com from "./components/navbar";
 import Poster_item from "./components/Poster_item";
+import events from "./data/events";
 
 function App() {
+  const [searchText, setseachText] = useState("");
+
+  const fliterTexts = events.filter((event_now) => {
+    return event_now.title.includes(searchText);
+  });
+
+  const eventElements = fliterTexts.map((eventt, index) => {
+    return <Poster_item key={index} event={eventt} />;
+  });
+
   return (
     <div className="app">
-      <Navbar_com />
+      <Navbar_com seachText={searchText} setseachText={setseachText} />
+
       <div className="Eventname">
         <h2>งานแสดงทั้งหมด</h2>
       </div>
-      <div className="app-grid">
-        <div>
-          <Poster_item
-            title="2024 NA IN WOO Fan Meeting in Bangkok ''Touch my heart''"
-            thumnailurl="/images/2024-na-in-woo.png"
-          />
-        </div>
-        <div>
-          <Poster_item
-            title="Music @ Mahidol"
-            thumnailurl="/images/music-at-mahidol-2024.png"
-          />
-        </div>
-        <div>
-          <Poster_item
-            title="Tom Jones : Ages & Stage Tour - Bangkok"
-            thumnailurl="/images/tom-jones.png"
-          />
-        </div>
-        <div>
-          <Poster_item
-            title="est Cola Presents JEFF SATUR: SPACE SHUTTLE NO.8 ASIA TOUR IN BANGKOK "
-            thumnailurl="/images/space-no-8-shuttle-asia-tour.png"
-          />
-        </div>
-        <div>
-          <Poster_item
-            title="One Piece ''The Great Era of Piracy''
-            Exhibition Asia Tour"
-            thumnailurl="/images/one-piece-the-great.png"
-          />
-        </div>
-        <div>
-          <Poster_item
-            title="The Sign 1st Fan Meeting : Lost in the jungle"
-            thumnailurl="/images/the-sign-1st-fan-meeting-lost-in-the-jungle.png"
-          />
-        </div>
-        <div>
-          <Poster_item
-            title="Vir Das : Mind Fool Tour in Bangkok"
-            thumnailurl="/images/vir-das-mind-fool-tour-in-bangkok.png"
-          />
-        </div>
-      </div>
+      <div className="app-grid">{eventElements}</div>
     </div>
   );
 }

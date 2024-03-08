@@ -3,11 +3,11 @@ import "./Poster_item.css";
 import Button from "react-bootstrap/Button";
 
 function Poster_item(props) {
-  const { title, thumnailurl } = props;
+  const { event } = props;
   return (
     <div className="Poster_item">
-      <img src={thumnailurl} />
-      <h8>{title}</h8>
+      <img src={event.thumnailurl} />
+      <h8>{event.title}</h8>
       <Button variant="danger">ซื้อบัตร</Button>
     </div>
   );
