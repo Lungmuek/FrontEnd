@@ -5,12 +5,14 @@ import { Container, Form, Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 // import NavDropdown from "react-bootstrap/NavDropdown";
-import AppHeader from "./components/Appheader";
+import AppHeader from "./Appheader";
+import "./navbar.css";
+import Modal from "../Login/Modal";
 
 function Navbar_com() {
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="Nav">
         <Container fluid>
           <Navbar.Brand href="#">
             <AppHeader />
@@ -33,6 +35,9 @@ function Navbar_com() {
                 />
                 <Button variant="outline-success">Search</Button>
               </Form>
+            </Nav>
+            <Nav>
+              <Modal />
             </Nav>
           </Navbar.Collapse>
         </Container>

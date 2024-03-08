@@ -1,4 +1,4 @@
-.app-event{
+.app-grid{
   display: grid;
   column-gap: 16px;
   row-gap: 16px;
@@ -11,3 +11,4 @@
 .app-header-logo {
   height: 50px;
 }
+

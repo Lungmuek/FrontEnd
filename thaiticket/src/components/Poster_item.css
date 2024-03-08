@@ -1,0 +1,11 @@
+.Poster_item img{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.Poster_item button{
+    width: 200px; /* กำหนดความกว้างของปุ่ม */
+    margin-bottom: 10px; /* กำหนดระยะห่างของปุ่มล่าสุด */
+    padding: 10px;
+}

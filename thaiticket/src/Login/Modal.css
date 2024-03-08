@@ -1,0 +1,31 @@
+.Logo-header{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+    padding: 10px;
+}
+.Login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column; /* จัดเรียงเป็นคอลัมน์ */
+  align-items: center; /* จัดตำแหน่งให้อยู่ตรงกลางในแนวนอน */
+  justify-content: center; /* จัดตำแหน่งให้อยู่ตรงกลางในแนวตั้ง */
+  height: 20vh; /* ทำให้สูงเท่ากับความสูงของหน้าจอ */
+}
+
+.login-btn {
+  width: 200px; /* กำหนดความกว้างของปุ่ม */
+  margin-bottom: 10px; /* กำหนดระยะห่างของปุ่มล่าสุด */
+}
+
+.forgot-password-btn {
+  color: rgb(153, 152, 152); /* กำหนดสีของข้อความเป็นสีน้ำเงิน */
+
+}
