@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-
+import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
@@ -26,7 +26,7 @@ function Navbar_com(props) {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">หน้าแรก</Nav.Link>
+              <Nav.Link href="/">หน้าแรก</Nav.Link>
               <Nav.Link href="#" disabled></Nav.Link>
               <Form className="d-flex">
                 <Form.Control

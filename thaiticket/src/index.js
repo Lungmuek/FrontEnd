@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import Event from "./pages/Event";
+import Login from "./pages/login";
 
+import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import HeadEvent from "./components/HeadEvent";
 
@@ -14,7 +16,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/event",
-    element: <HeadEvent />,
+    element: <Event />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
