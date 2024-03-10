@@ -1,27 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import HeadEvent from './components/HeadEvent';
+import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
+import HeadEvent from "./components/HeadEvent";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "/event",
-    element: <HeadEvent/>
-  }
+    element: <HeadEvent />,
+  },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
