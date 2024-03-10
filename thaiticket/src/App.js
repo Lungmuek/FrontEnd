@@ -3,11 +3,13 @@ import "./App.css";
 
 import Navbar_com from "./components/navbar";
 import Poster_item from "./components/Poster_item";
-import events from "./data/events";
+import events from "./data/events_data";
+import { Route } from "react-router-dom";
+import Event from "./pages/Event";
 
 function App() {
   const [searchText, setseachText] = useState("");
-  const [event, setEvent] = useState([])
+  const [event, setEvent] = useState([]);
 
   const fliterTexts = events.filter((event_now) => {
     return event_now.title.toLowerCase().includes(searchText.toLowerCase());

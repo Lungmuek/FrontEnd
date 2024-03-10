@@ -24,7 +24,6 @@
   width: 200px; /* กำหนดความกว้างของปุ่ม */
   margin-bottom: 10px; /* กำหนดระยะห่างของปุ่มล่าสุด */
 
-  cursor: pointer; /* เปลี่ยน cursor เป็น pointer */
 }
 
 .forgot-password-btn {

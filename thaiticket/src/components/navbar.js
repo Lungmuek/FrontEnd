@@ -8,6 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import AppHeader from "./Appheader";
 import "./navbar.css";
 import Modal from "../Login/Modal";
+import Link from "react-router-dom";
 
 function Navbar_com(props) {
   const { searchText, setseachText } = props;

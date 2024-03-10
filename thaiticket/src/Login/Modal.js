@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -8,8 +8,26 @@ import "./Modal.css";
 function Modal_pop() {
   const [show, setShow] = useState(false);
 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // ฟังก์ชันตรวจสอบข้อมูลการเข้าสู่ระบบ
+  const handleLogin = () => {
+    // ดึงค่าชื่อผู้ใช้และรหัสผ่านจากฟอร์ม
+
+    // ตรวจสอบว่าชื่อผู้ใช้และรหัสผ่านถูกต้องหรือไม่
+    if (username === "admin" && password === "password") {
+      // ถ้าถูกต้อง ทำการเข้าสู่ระบบ
+      alert("เข้าสู่ระบบสำเร็จ!");
+      handleClose(); // ซ่อน Modal หลังจากเข้าสู่ระบบสำเร็จ
+    } else {
+      // ถ้าไม่ถูกต้อง แจ้งเตือนให้ผู้ใช้ระบุข้อมูลใหม่
+      alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!");
+    }
+  };
 
   return (
     <>
@@ -33,6 +51,8 @@ function Modal_pop() {
                 type="email"
                 placeholder="ชื่อผู้ใช้(อีเมล)"
                 autoFocus
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="password">
@@ -41,11 +61,17 @@ function Modal_pop() {
                 type="password"
                 placeholder="กรุณากรอกรหัสผ่าน 8 หลัก"
                 autoFocus
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
           </Form>
           <div className="login-container">
-            <Button variant="danger" onClick={handleShow} className="login-btn">
+            <Button
+              variant="danger"
+              onClick={handleLogin}
+              className="login-btn"
+            >
               เข้าสู่ระบบ
             </Button>
             <Button variant="link" className="forgot-password-btn">
