@@ -1,9 +1,5 @@
 const HeadEvent = () => {
-    return (
-        <h1>
-            OnePiece
-        </h1>
-    )
-}
+  return <h1>OnePiece</h1>;
+};
 
-export default HeadEvent
+export default HeadEvent;
