@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-
 import Navbar_com from "./components/navbar";
 import Poster_item from "./components/Poster_item";
 import events from "./data/events_data";
