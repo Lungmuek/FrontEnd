@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Poster_item.css";
 import Button from "react-bootstrap/Button";
 import { Link, NavLink } from "react-router-dom";
+
 function Poster_item(props) {
   const { event } = props;
   return (
