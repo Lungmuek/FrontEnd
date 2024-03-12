@@ -1,0 +1,101 @@
+.Top-left div{
+  
+    font-size: 18px;
+    color: white;
+}
+
+.Top-left img {
+    max-width: 100px; /* ปรับขนาดความกว้างสูงสุดของรูป */
+    max-height: 150px; /* ปรับขนาดความสูงสูงสุดของรูป */
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.Top-left .text{
+    font-size: 14px; /* ปรับขนาดข้อความให้เล็กลง */
+    display: flex; /* ให้เนื้อหาภายใน div เรียงตัวในแนวนอน */
+    flex-direction: column; /* ให้เนื้อหาภายใน div เรียงตัวในแนวดิ่ง */
+    justify-content: flex-end; /* จัดเนื้อหาภายใน div ไปชิดด้านล่างของพื้นที่ */
+    align-items: flex-end; /* จัดเนื้อหาภายใน div ไปชิดด้านขวาสุดของพื้นที่ */
+    margin-right: 10px;
+    margin-top: 15px;
+  }
+
+  .Top-left .grid {
+    display: flex;
+  }
+  
+  .Top-left .grid div {
+    flex: 1;
+  }
+  
+  .Top-left .grid .image-container {
+    flex: 1; 
+  }
+  
+  .Top-left .grid .details-container {
+    margin-bottom: 50px;
+    flex: 8; 
+    display: auto;
+    flex-direction: column;
+    justify-content: flex-end;
+
+  }
+  .details-container select {
+    padding: 5px; /* ปรับขนาด padding ของ dropdown */
+    font-size: 14px; /* ปรับขนาดของตัวอักษรใน dropdown */
+  }
+  
+  select {
+    background-color: rgba(255, 255, 255, 0.5); /* ใช้ rgba เพื่อกำหนดความโปร่งใส */
+    border: none; /* ลบเส้นขอบ */
+    padding: 8px; /* ขนาดของขอบ dropdown */
+    border-radius: 5px; /* รอบขอบ dropdown */
+    color: black; /* สีของตัวอักษรภายใน dropdown */
+  }
+  .seat-free-btn {
+  margin-left: 10px; /* เพิ่ม margin ขวา */
+  padding: 7px 10px; /* ปรับขนาดของปุ่ม */
+  font-size: 12px; /* ปรับขนาดตัวอักษร */
+}
+
+#ตารางแสดง
+.seat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.seat-table th,
+.seat-table td {
+  border: 5px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.seat-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.seat-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.seat-table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.ModalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.seat-table {
+  width: 100%;
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+.ModalTitle {
+  padding-left: 200px;
+}

@@ -38,15 +38,11 @@
     object-fit: cover;
 }
 
-.billboard .poster-btn button{
-    width: 78%; /* กำหนดความกว้างของปุ่ม */
+.billboard-details .poster-btn button{
+    width: 100%; /* กำหนดความกว้างของปุ่ม */
     margin-bottom: 10px; /* กำหนดระยะห่างของปุ่มล่าสุด */
     padding: 10px;
-    background-color: rgb(255, 39, 39);   
-}
-
-.billboard-details .poster-btn NavLink{
-    text-decoration: none;
+    background-color: rgb(255, 39, 39); 
 }
 
 .billboard .poster-btn button:hover{
