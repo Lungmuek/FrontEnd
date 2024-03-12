@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Poster_item.css";
 import Button from "react-bootstrap/Button";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Poster_item(props) {
   const { event } = props;
+
   return (
     <div className="Poster_item">
-      <img src={event.thumnailurl} />
+      <img src={event.thumnailurl} alt="Event Thumbnail" />
       <h8>{event.title}</h8>
-      <NavLink classname="Poster_item" to="/event">
+      <NavLink
+        className="์NavLink"
+        to={`/event?title=${encodeURIComponent(
+          event.title
+        )}&thumnailurl=${encodeURIComponent(event.thumnailurl)}`}
+      >
         <Button variant="danger">ซื้อบัตร</Button>
       </NavLink>
     </div>

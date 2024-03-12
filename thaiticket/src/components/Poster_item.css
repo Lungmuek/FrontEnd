@@ -15,6 +15,9 @@
     width: 100%; /* กำหนดความกว้างของปุ่ม */
     margin-bottom: 10px; /* กำหนดระยะห่างของปุ่มล่าสุด */
     padding: 10px;
-    
 }
 
+.Poster_item NavLink {
+    text-decoration: none; /* Remove underline from the NavLink */
+}
+  

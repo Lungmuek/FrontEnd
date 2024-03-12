@@ -1,19 +1,19 @@
 const events = [
   {
-    title: "2024 NA IN WOO Fan Meeting in Bangkok ''Touch my heart''",
+    title: "2024 NA IN WOO Fan Meeting in Bangkok Touch my heart",
     thumnailurl: "/images/2024-na-in-woo.png",
   },
   {
-    title: "Music @ Mahidol",
+    title: "Music@Mahidol 2024",
     thumnailurl: "/images/music-at-mahidol-2024.png",
   },
   {
-    title: "Tom Jones : Ages & Stage Tour - Bangkok",
+    title: "Tom Jones: Ages and Stage Tour-Bangkok",
     thumnailurl: "/images/tom-jones.png",
   },
   {
     title:
-      "est Cola Presents JEFF SATUR: SPACE SHUTTLE NO.8 ASIA TOUR IN BANGKOK ",
+      "est Cola Presents JEFF SATUR: SPACE SHUTTLE NO.8 ASIA TOUR IN BANGKOK",
     thumnailurl: "/images/space-no-8-shuttle-asia-tour.png",
   },
   {

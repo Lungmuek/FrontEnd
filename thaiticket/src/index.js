@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import Event from "./pages/Event";
 import Login from "./pages/login";
-
+import Test from "./pages/test";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import HeadEvent from "./components/HeadEvent";
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/test",
+    element: <Test />,
   },
 ]);
 
