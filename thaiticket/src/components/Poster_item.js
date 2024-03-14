@@ -14,7 +14,12 @@ function Poster_item(props) {
         className="์NavLink"
         to={`/event?title=${encodeURIComponent(
           event.title
-        )}&thumnailurl=${encodeURIComponent(event.thumnailurl)}`}
+        )}&thumnailurl=${encodeURIComponent(
+          event.thumnailurl
+        )}&zone_thumnailurl=${encodeURIComponent(
+          event.zone_thumnailurl
+        )}&price_thumnailurl=${encodeURIComponent(event.price_thumnailurl)}
+      `}
       >
         <Button variant="danger">ซื้อบัตร</Button>
       </NavLink>

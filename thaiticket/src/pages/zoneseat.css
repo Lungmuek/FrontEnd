@@ -1,0 +1,154 @@
+.seat-container {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .seat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .seat-row span {
+    font-size: 12px; /* ปรับขนาดตัวอักษรให้เท่ากันทุกแถว */
+    margin-right: 10px; /* ระยะห่างของชื่อแถวกับปุ่มที่นั่ง */
+    width: 60px; /* กำหนดความกว้างของชื่อแถว */
+    text-align: center; /* จัดข้อความตามศูนย์กลาง */
+    color: white;
+  }
+
+  
+  .seat-buttons button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .seat-buttons button.unavailable {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* ปุ่มตั้งแต่ AA ถึง AF */
+  .seat-row .seat-buttons button:nth-child(n + 27):nth-child(-n + 32) {
+    margin-right: 5px;
+  }
+  
+  /* ปุ่ม AF */
+  .seat-row .seat-buttons button:nth-child(32) {
+    margin-right: 0;
+  }
+
+  .content {
+    width: 80%; /* กำหนดความกว้างของเนื้อหา */
+  }
+
+  .seat-buttons {
+    display: flex;
+  }
+  
+  .seat-button {
+    font-size: 0.8em;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: green; /* Default background color for available seats */
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+  }
+
+  .seat-button.available {
+    background-color: rgb(0, 180, 0);
+  }
+  
+  .seat-button.unavailable {
+    background-color: red;
+  }
+  
+  .seat-button.selected {
+    background-color: white;
+    color: black;
+  }
+  
+  .seat-button:disabled {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+  }
+
+  
+  .available {
+    background-color: green;
+  }
+  
+  .reserved {
+    
+    background-color: red;
+  }
+  
+  .selected {
+    background-color: white;
+  }
+
+  
+  .seat-container .booking-details{
+    position: absolute;
+    width: 237px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    top: 50px;
+    right: 0;
+    margin: 20px;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    overflow-wrap: break-word;
+  }
+
+  .booking-details h3{
+    background: linear-gradient(to right, #b40000 0%, #f00000 100%);
+    margin: -10px -15px 10px -15px;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+    padding: 10px 15px;
+  }
+
+  .confirm-button {
+    position: relative;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #b40000 0%, #f00000 100%);
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีพื้นหลังเมื่อนำเม้าส์ไปชี้ */
+  }
+  
+  .confirm-button:hover {
+    background: #ff2929; /* เมื่อชี้เม้าส์มายังปุ่ม */
+  }
+  
+  .confirm-button:active {
+    background: #cd5c5c; /* เมื่อคลิกปุ่ม */
+  }

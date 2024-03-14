@@ -6,6 +6,7 @@ import Event from "./pages/Event";
 import Login from "./pages/login";
 import Test from "./pages/test";
 import Show from "./pages/show";
+import Zoneseat from "./pages/zoneseat";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import HeadEvent from "./components/HeadEvent";
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/show",
     element: <Show />,
+  },
+  {
+    path: "/zoneseat",
+    element: <Zoneseat />,
   },
 ]);
 

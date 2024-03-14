@@ -12,6 +12,12 @@ function Event() {
   const event_thumnailurl = new URLSearchParams(location.search).get(
     "thumnailurl"
   );
+  const event_zone = new URLSearchParams(location.search).get(
+    "zone_thumnailurl"
+  );
+  const event_price = new URLSearchParams(location.search).get(
+    "price_thumnailurl"
+  );
   const fetch_url =
     "http://localhost:8000/select-event?event_name=" + event_name;
   const [price, setPrice] = useState([]);
@@ -53,7 +59,12 @@ function Event() {
                 event_name
               )}&thumnailurl=${encodeURIComponent(
                 event_thumnailurl
-              )}&show_list=${encodeURIComponent(JSON.stringify(show_list))}`}
+              )}&show_list=${encodeURIComponent(
+                JSON.stringify(show_list)
+              )}&zone_thumnailurl=${encodeURIComponent(
+                event_zone
+              )}&price_thumnailurl=${encodeURIComponent(event_price)}
+              `}
             >
               <Button variant="danger" style={{ width: "200px" }}>
                 ซื้อบัตร

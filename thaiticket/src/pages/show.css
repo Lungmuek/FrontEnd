@@ -99,3 +99,18 @@
 .ModalTitle {
   padding-left: 200px;
 }
+.picture-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.picture-down img {
+  margin: 0 10px; /* เพิ่มระยะห่างด้านข้างของรูป */
+}
+
+.button-no-decoration button{
+  text-decoration: none;
+  color: inherit;
+}

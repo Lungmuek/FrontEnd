@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import All_navbar from "../components/All_navbar";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./show.css";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
@@ -12,6 +10,12 @@ function Show() {
   const event_name = new URLSearchParams(location.search).get("title");
   const event_thumnailurl = new URLSearchParams(location.search).get(
     "thumnailurl"
+  );
+  const event_zone = new URLSearchParams(location.search).get(
+    "zone_thumnailurl"
+  );
+  const event_price = new URLSearchParams(location.search).get(
+    "price_thumnailurl"
   );
   const show_list_string = new URLSearchParams(location.search).get(
     "show_list"
@@ -68,6 +72,10 @@ function Show() {
   // ฟังก์ชันเมื่อปิด modal
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+
+  const checkNumberColor = (number) => {
+    return number === 0 ? "red-number" : "green-number";
   };
 
   return (
@@ -137,7 +145,29 @@ function Show() {
                   zoneSeat.map((zone, index) => (
                     <tr key={index}>
                       <td>{zone.zone_name}</td>
-                      <td>{zone.available_seat}</td>
+                      <td>
+                        <NavLink
+                          to={`/zoneseat?zone=${
+                            zone.zone_name
+                          }&event_name=${event_name}
+                          &event_thumnail=${event_thumnailurl}
+                          &show_date=${showRound.split(",")[0]}&show_time=${
+                            showRound.split(",")[1]
+                          }
+                          `}
+                          className="button-no-decoration"
+                        >
+                          <Button
+                            variant="link"
+                            style={{
+                              color:
+                                zone.available_seat === 0 ? "red" : "green",
+                            }}
+                          >
+                            {zone.available_seat}
+                          </Button>
+                        </NavLink>
+                      </td>
                     </tr>
                   ))}
               </tbody>
@@ -149,6 +179,10 @@ function Show() {
             </Button>
           </Modal.Footer>
         </Modal>
+        <div className="picture-down">
+          <img src={event_zone} />
+          <img src={event_price} />
+        </div>
       </div>
     </div>
   );
