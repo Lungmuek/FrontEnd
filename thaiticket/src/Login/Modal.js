@@ -1,37 +1,75 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import AppHeader from "../components/Appheader";
 import "./Modal.css";
 
-function Modal_pop() {
+function Modal_pop(props) {
   const [show, setShow] = useState(false);
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    setLoggedIn(isLoggedIn);
+  }, []);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // ฟังก์ชันตรวจสอบข้อมูลการเข้าสู่ระบบ
+  const handleLogout = () => {
+    localStorage.setItem("isLoggedIn", false);
+    localStorage.removeItem("username");
+    setLoggedIn("false");
+    alert("ออกจากระบบสำเร็จ!!!");
+  };
+
   const handleLogin = () => {
-    // ตรวจสอบชื่อผู้ใช้และรหัสผ่าน
-    if (username === "admin" && password === "password") {
-      // เข้าสู่ระบบสำเร็จ
-      alert("เข้าสู่ระบบสำเร็จ!");
-      handleClose(); // ซ่อน Modal หลังจากเข้าสู่ระบบสำเร็จ
-    } else {
-      // เข้าสู่ระบบไม่สำเร็จ
-      alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!");
-    }
+    const apiUrl = `http://localhost:8000/login?username=${encodeURIComponent(
+      username
+    )}&password=${encodeURIComponent(password)}`;
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data.status) {
+          alert("เข้าสู่ระบบสำเร็จ!!!");
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("username", username);
+          localStorage.setItem("account_id", data.account_id);
+          setLoggedIn("true");
+          handleClose();
+        } else {
+          alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!");
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "There has been a problem with your fetch operation:",
+          error
+        );
+        alert("เกิดข้อผิดพลาดในการเชื่อมต่อ!");
+      });
   };
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        เข้าสู่ระบบ
-      </Button>
+      {loggedIn === "true" ? (
+        <Button variant="danger" onClick={handleLogout}>
+          ออกจากระบบ
+        </Button>
+      ) : (
+        <Button variant="primary" onClick={handleShow}>
+          เข้าสู่ระบบ
+        </Button>
+      )}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton></Modal.Header>

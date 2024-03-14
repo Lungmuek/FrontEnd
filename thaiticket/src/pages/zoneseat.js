@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import All_navbar from "../components/All_navbar";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom"; // เพิ่ม useNavigate
 import "./zoneseat.css";
 
 function Zoneseat() {
   const location = useLocation();
+  const navigate = useNavigate(); // ใช้ useNavigate เพื่อเดินทางไปยังหน้าอื่น
   const params = new URLSearchParams(location.search);
 
   // ดึงค่าจาก URL parameters ที่ส่งมาจากหน้า Show
@@ -23,7 +24,9 @@ function Zoneseat() {
   const [isSpecial, setIsSpecial] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/select-zone?account_id=12345&
+    fetch(`http://localhost:8000/select-zone?account_id=${localStorage.getItem(
+      "account_id"
+    )}&
 event_name=${encodeURIComponent(event_name)}&
 show_date=${encodeURIComponent(show_date)}&
 show_time=${encodeURIComponent(show_time)}&
@@ -38,6 +41,8 @@ zone_name=${encodeURIComponent(zone)}`)
         setTicketPrice(data.zone_price);
       });
   }, []); // ใช้ useEffect ด้วย dependency array เป็น [] เพื่อให้ฟังก์ชั่นดึงข้อมูลเริ่มต้นเมื่อ component โหลดเสร็จ
+
+  console.log(isSpecial);
 
   const renderSeatRowButtons = (rowName, seatsInRow) => {
     return (
@@ -107,8 +112,14 @@ zone_name=${encodeURIComponent(zone)}`)
   };
 
   const handleConfirmSeats = () => {
+    if (seat_numbers.length === 0) {
+      alert("กรุณาเลือกที่นั่งค่ะ");
+      return;
+    } else alert("ยืนยันการจองเรียบร้อยค่ะ");
     // สร้าง URL พร้อมกับ parameters ที่จะส่งไปยัง API
-    const apiUrl = `http://localhost:8000/select-seat?account_id=12345&event_name=${encodeURIComponent(
+    const apiUrl = `http://localhost:8000/select-seat?account_id=${localStorage.getItem(
+      "account_id"
+    )}&event_name=${encodeURIComponent(
       event_name
     )}&show_date=${encodeURIComponent(
       show_date
@@ -129,6 +140,8 @@ zone_name=${encodeURIComponent(zone)}`)
       .then((data) => {
         // กระบวนการจัดการข้อมูลที่ได้รับกลับจาก API
         console.log(data); // เป็นตัวอย่างการแสดงข้อมูลที่ได้รับกลับมาใน console
+        // เด้งกลับไปหน้าแรก (home page)
+        navigate("/"); // ใช้ navigate เพื่อเดินทางไปยังหน้าอื่น
       })
       .catch((error) => {
         // กระบวนการจัดการเมื่อเกิด error
@@ -193,6 +206,12 @@ zone_name=${encodeURIComponent(zone)}`)
               <p>ราคาบัตร: {ticket_price}</p>
               <p>จำนวนที่นั่ง: {seat_count}</p>
               <p>เลขที่นั่ง: {seat_numbers.join(", ")}</p>
+              <p>
+                ราคาทั้งหมด:{" "}
+                {isSpecial
+                  ? seat_count * ticket_price * 0.9 + " (ลดราคา 10%)"
+                  : seat_count * ticket_price}
+              </p>
               <button className="confirm-button" onClick={handleConfirmSeats}>
                 ยืนยันที่นั่ง
               </button>

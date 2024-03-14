@@ -1,14 +1,12 @@
-import React, { Component, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 import AppHeader from "./Appheader";
 import "./navbar.css";
 import Modal from "../Login/Modal";
-import Link from "react-router-dom";
 
 function Navbar_com() {
   return (
@@ -28,9 +26,7 @@ function Navbar_com() {
               <Nav.Link href="/">หน้าแรก</Nav.Link>
               <Nav.Link href="#" disabled></Nav.Link>
             </Nav>
-            <Nav>
-              <Modal />
-            </Nav>
+            <Nav></Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

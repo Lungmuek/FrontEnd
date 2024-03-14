@@ -1,7 +1,5 @@
-import HeadEvent from "../components/HeadEvent";
 import All_navbar from "../components/All_navbar";
 import React, { useEffect, useState } from "react";
-import events from "../data/events_data";
 import "./Event.css";
 import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -22,7 +20,6 @@ function Event() {
     "http://localhost:8000/select-event?event_name=" + event_name;
   const [price, setPrice] = useState([]);
   const [event_date, setEventDate] = useState("");
-  const [event_intro, setEventIntro] = useState("");
   const [ticket_date, setTicketDate] = useState("");
   const [hall_name, setHallName] = useState("");
   const [show_list, setShowList] = useState("");
@@ -40,8 +37,6 @@ function Event() {
         setShowList(data.show_list);
       });
   }, []);
-
-  show_list && console.log(JSON.stringify(show_list));
 
   return (
     <div className="Nav">
@@ -91,12 +86,14 @@ function Event() {
             </p>
             <p>
               ราคาบัตร <br></br>
-              <span>{price && price}</span>
+              <span>{price && price.sort().join(", ")}</span>
             </p>
             <p>
               Ticket status
               <br />
-              <span>Available</span>
+              <span style={{ color: "green", fontWeight: "bold" }}>
+                Available
+              </span>
             </p>
           </div>
         </div>

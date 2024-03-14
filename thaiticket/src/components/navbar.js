@@ -1,17 +1,15 @@
-import React, { Component, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-// import NavDropdown from "react-bootstrap/NavDropdown";
 import AppHeader from "./Appheader";
 import "./navbar.css";
 import Modal from "../Login/Modal";
-import Link from "react-router-dom";
 
 function Navbar_com(props) {
-  const { searchText, setseachText } = props;
+  const { searchText, setSearchText, isLoggedIn, setIsLoggedIn } = props;
+
   return (
     <div>
       <Navbar expand="lg" className="Nav_scoll">
@@ -36,14 +34,14 @@ function Navbar_com(props) {
                   aria-label="Search"
                   value={searchText}
                   onChange={(event) => {
-                    setseachText(event.target.value);
+                    setSearchText(event.target.value);
                   }}
                 />
                 <Button variant="outline-success">Search</Button>
               </Form>
             </Nav>
             <Nav>
-              <Modal />
+              <Modal isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             </Nav>
           </Navbar.Collapse>
         </Container>
